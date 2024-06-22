@@ -39,7 +39,7 @@ const onPageChange = (page) => {
     fetch(`https://newsapi.org/v2/everything?q=${keyword}&searchIn=title,description&language=en&sortBy=relevancy&pageSize=${PageSize}&page=1&apiKey=${apikey}`)
     .then((res)=>res.json())
     .then((data)=>{
-      if (data.status=='error'){
+      if (data.status==='error'){
         setErrormsg(data.message);
         setLoading(false);
         return;

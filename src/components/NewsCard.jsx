@@ -5,7 +5,7 @@ function NewsCard({item}) {
   return (
 
     <div className='w-full flex items-center justify-center'>
-    <a href={item.url} target='_blank'>
+    <a href={item.url} target='_blank' rel="noreferrer">
     <div className='bg-gray-100/20 rounded-lg max-w-[35rem] p-8 shadow-md hover:scale-[102%] duration-75 ease-in-out'>
     
     <img src={item.urlToImage ?? NoImage} alt="" className='w-full h-64 object-cover rounded-lg'/>
