@@ -35,7 +35,7 @@ function Categories() {
     fetch(`https://newsapi.org/v2/top-headlines?category=${category}&country=in&pageSize=${PageSize}&page=${page}&apiKey=${apikey}`)
     .then((res)=>res.json())
     .then((data)=>{
-      if(data.status=='ok'){
+      if(data.status==='ok'){
       setNews(data.articles);
       setLoading(false);
       setCurrentPage(page);

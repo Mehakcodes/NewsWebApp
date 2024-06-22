@@ -1,12 +1,11 @@
 import React from 'react';
 import NewsCard from '../components/NewsCard';
-import { useEffect,useState } from 'react';
+import { useState } from 'react';
 import Pagination from '../components/Pagination';
 
 function Search() {
   const apikey=process.env.REACT_APP_NEWS_API_KEY;
   const [news,setNews]=useState([]);
-  const [loading,setLoading]=useState(true);
   const [errormsg,setErrormsg]=useState(null);
   const [keyword,setKeyword]=useState(null); 
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,7 +18,7 @@ const onPageChange = (page) => {
     fetch(`https://newsapi.org/v2/everything?q=${keyword}&searchIn=title,description&language=en&sortBy=relevancy&pageSize=${PageSize}&page=${page}&apiKey=${apikey}`)
     .then((res) => res.json())
     .then((data) => {
-      if (data.status=='error'){
+      if (data.status==='error'){
         setErrormsg(data.message);
         setLoading(false);
         return;
